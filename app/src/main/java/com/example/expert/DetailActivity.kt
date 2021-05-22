@@ -8,17 +8,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.bumptech.glide.GlideContext
-import com.example.expert.Model.DetailModel
+import com.example.expert.core.domain.model.DetailModel
 import com.example.expert.ViewModel.DetailViewModel
-import com.example.expert.R
-import com.example.expert.Model.MovieModel
+import com.example.expert.core.domain.model.MovieModel
 import com.example.expert.core.utils.GlidePhoto
 import kotlinx.android.synthetic.main.activity_detail.*
-import org.koin.android.viewmodel.compat.ScopeCompat.viewModel
-import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailActivity : AppCompatActivity() {
 

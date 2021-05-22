@@ -1,15 +1,13 @@
 package com.example.expert.core.data
 
-import android.provider.CalendarContract
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.expert.Model.MovieModel
+import com.example.expert.core.domain.model.MovieModel
 import com.example.expert.core.data.source.local.LocalDataSource
 import com.example.expert.core.data.source.local.entity.id
 import com.example.expert.core.data.source.remote.RemoteDataSource
 import com.example.expert.core.domain.repository.IMovieRepository
 import com.example.expert.core.utils.DataMapper
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class MovieRepository(

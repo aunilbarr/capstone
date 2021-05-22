@@ -1,9 +1,8 @@
 package com.example.expert.core.domain.usecase
 
-import android.graphics.Movie
 import androidx.lifecycle.LiveData
-import com.example.expert.Model.DetailModel
-import com.example.expert.Model.MovieModel
+import com.example.expert.core.domain.model.DetailModel
+import com.example.expert.core.domain.model.MovieModel
 import kotlinx.coroutines.flow.Flow
 
 interface MovieUseCase {

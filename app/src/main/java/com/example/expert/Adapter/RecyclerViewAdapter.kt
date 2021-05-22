@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.expert.Model.MovieModel
+import com.example.expert.core.domain.model.MovieModel
 import com.example.expert.R
 import com.example.expert.core.utils.GlidePhoto
 import kotlinx.android.synthetic.main.item_list.view.*
 
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHolder>() {
+
+
 
     private val lists = ArrayList<MovieModel>()
     var onItemClickCallback: ((MovieModel) -> Unit)? = null

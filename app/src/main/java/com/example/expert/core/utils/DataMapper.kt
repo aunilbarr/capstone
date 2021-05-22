@@ -1,8 +1,8 @@
 package com.example.expert.core.utils
 
 import android.util.Log
-import com.example.expert.Model.DetailModel
-import com.example.expert.Model.MovieModel
+import com.example.expert.core.domain.model.DetailModel
+import com.example.expert.core.domain.model.MovieModel
 import com.example.expert.core.data.source.local.entity.movie
 import com.example.expert.core.data.source.remote.response.DetailResponse
 import com.example.expert.core.data.source.remote.response.MovieResponse

@@ -1,7 +1,6 @@
 package com.example.expert
 
-import com.example.expert.core.di.useCaseModule
-import com.example.expert.core.di.viewModelModule
+import com.example.expert.core.di.*
 import com.google.android.play.core.splitcompat.SplitCompatApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -17,6 +16,9 @@ class MyApplication : SplitCompatApplication() {
                 listOf(
                     useCaseModule,
                     viewModelModule,
+                    networkModule,
+                    repositoryModule,
+                    recyclerViewModule
                 )
             )
         }
