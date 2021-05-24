@@ -5,19 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.viewModels
+
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.expert.Adapter.RecyclerViewAdapter
-import com.example.expert.core.domain.model.MovieModel
+import com.example.fayyadhaunilbarr.core.ui.RecyclerViewAdapter
+import com.example.fayyadhaunilbarr.core.domain.model.MovieModel
 import com.example.expert.ViewModel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: MainViewModel by viewModels<MainViewModel>()
+    val viewModel: MainViewModel by viewModel<MainViewModel>()
 
-    private val viewAdapter: RecyclerViewAdapter by inject()
+    val viewAdapter: RecyclerViewAdapter by inject()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

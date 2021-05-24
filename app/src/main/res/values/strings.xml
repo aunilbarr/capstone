@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Expert</string>
+    <string name="app_name">MovieExpert</string>
     <string name="item_rv">item_rv</string>
     <string name="movie_title">Movie Title</string>
     <string name="release_date">Release Date</string>
