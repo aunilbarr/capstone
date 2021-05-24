@@ -6,14 +6,12 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.activity.viewModels
-import org.koin.android.viewmodel.compat.ViewModelCompat
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
-import com.example.fayyadhaunilbarr.core.domain.model.DetailModel
+import com.example.expert.core.domain.model.DetailModel
 import com.example.expert.ViewModel.DetailViewModel
-import com.example.fayyadhaunilbarr.core.domain.model.MovieModel
-import com.example.fayyadhaunilbarr.core.utils.GlidePhoto
+import com.example.expert.core.domain.model.MovieModel
+import com.example.expert.core.utils.GlidePhoto
 import kotlinx.android.synthetic.main.activity_detail.*
 import org.koin.android.viewmodel.ext.android.viewModel
 

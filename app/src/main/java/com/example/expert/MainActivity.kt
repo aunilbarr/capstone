@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.Toast
 
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fayyadhaunilbarr.core.ui.RecyclerViewAdapter
-import com.example.fayyadhaunilbarr.core.domain.model.MovieModel
+import com.example.expert.core.ui.RecyclerViewAdapter
+import com.example.expert.core.domain.model.MovieModel
 import com.example.expert.ViewModel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
