@@ -26,6 +26,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        toolbar_main.setOnMenuItemClickListener { item ->
+            if (item.itemId == R.id.favbar) {
+                val favoriteIntent = Intent(
+                    this,
+                    Class.forName("com.example.expert.favorite.favoriteActivity")
+                )
+                startActivity(favoriteIntent)
+                true
+            } else false
+        }
+
         with(recyclerview) {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = viewAdapter

@@ -6,4 +6,10 @@
     <string name="detail">Details</string>
     <string name="overview">Overview</string>
     <string name="error">Failed to load</string>
+    <string name="title_favorite">Your Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="delete_fav">Delete this %s from your favorite?</string>
 </resources>

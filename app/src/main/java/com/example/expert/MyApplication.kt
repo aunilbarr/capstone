@@ -1,6 +1,8 @@
 package com.example.expert
 
+import android.content.Context
 import com.example.expert.core.di.*
+import com.google.android.play.core.splitcompat.SplitCompat
 import com.google.android.play.core.splitcompat.SplitCompatApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -19,9 +21,13 @@ class MyApplication :  SplitCompatApplication() {
                     viewModelModule,
                     networkModule,
                     repositoryModule,
-                    recyclerViewModule
+                    recyclerViewModule,
                 )
             )
         }
+    }
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        SplitCompat.install(this)
     }
 }
