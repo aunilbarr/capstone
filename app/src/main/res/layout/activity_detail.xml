@@ -27,7 +27,7 @@
             <ImageView
                 android:id="@+id/movieImage"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="300dp"
                 android:scaleType="fitCenter"
                 app:layout_collapseMode="none"
                 tools:ignore="ContentDescription"
@@ -60,7 +60,7 @@
             android:id="@+id/detailView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp">
+            android:padding="6dp">
 
             <ProgressBar
                 android:id="@+id/detailBar"
