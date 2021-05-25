@@ -1,4 +1,4 @@
-package com.example.expert
+package com.example.expert.view
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.example.expert.R
 import kotlinx.android.synthetic.main.fragment_delete.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,7 +22,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class DeleteFragment : DialogFragment(), View.OnClickListener {
 
-    companion object{
+    companion object {
         var EXTRA_DATA = "extra_data"
     }
 
@@ -59,7 +60,7 @@ class DeleteFragment : DialogFragment(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        when (view){
+        when (view) {
             yesb -> {
                 listener?.ondelete("Delete")
                 dialog?.dismiss()

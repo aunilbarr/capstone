@@ -13,8 +13,6 @@ import kotlinx.android.synthetic.main.item_list.view.*
 
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHolder>() {
 
-
-
     private val lists = ArrayList<MovieModel>()
     var onItemClickCallback: ((MovieModel) -> Unit)? = null
 
@@ -28,7 +26,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHol
         fun bind(movie: MovieModel) {
             with(itemView) {
                 Glide.with(itemView.context)
-                    .load(movie.photo?.let { GlidePhoto.createGlideImagePath(it) })
+                    .load(movie.photo.let { GlidePhoto.createGlideImagePath(it) })
                     .centerInside()
                     .into(itemImage)
                 itemTitle.text = movie.title
@@ -56,5 +54,4 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHol
         holder.bind(lists[position])
 
     override fun getItemCount(): Int = lists.size
-
 }

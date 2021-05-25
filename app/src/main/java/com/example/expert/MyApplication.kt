@@ -8,7 +8,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
-class MyApplication :  SplitCompatApplication() {
+class MyApplication : SplitCompatApplication() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
@@ -26,6 +26,7 @@ class MyApplication :  SplitCompatApplication() {
             )
         }
     }
+
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
         SplitCompat.install(this)

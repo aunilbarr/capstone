@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class RemoteDataSource(private val apiService: ApiService){
+class RemoteDataSource(private val apiService: ApiService) {
     fun getAllMovies(): Flow<List<MovieResponse>> {
         return flow {
             try {
@@ -17,7 +17,7 @@ class RemoteDataSource(private val apiService: ApiService){
                 val dataArray = response.movies
                 Log.d("RemoteDataSource", dataArray.toString())
                 if (dataArray.isNotEmpty()) emit(dataArray)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("RemoteDataSource", e.toString())
             }
         }.flowOn(Dispatchers.IO)
@@ -28,7 +28,7 @@ class RemoteDataSource(private val apiService: ApiService){
             try {
                 val response = apiService.getDetails(id.toString())
                 emit(response)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("RemoteDataSource", e.toString())
             }
         }.flowOn(Dispatchers.IO)

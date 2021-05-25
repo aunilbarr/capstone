@@ -5,38 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
-  <com.google.android.material.appbar.AppBarLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@color/teal_200">
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar_main"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/teal_200">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_200"
+            app:menu="@menu/fav_bar"
+            app:tabTextColor="@color/colorPrimary"
+            app:title="Top Rated" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/teal_200"
-        app:tabTextColor="@color/colorPrimary"
-        app:title="Top Rated"
-        app:menu="@menu/fav_bar"/>
-  </com.google.android.material.appbar.AppBarLayout>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_list" />
 
-
-  <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/recyclerview"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:background="@color/teal_200"
-      tools:listitem="@layout/item_list"
-      app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
-  <ProgressBar
-      android:id="@+id/mainBar"
-      android:layout_gravity="center"
-      android:layout_width="wrap_content"
-      android:indeterminateTint="@color/colorPrimaryDark"
-      android:layout_height="wrap_content"
-      />
+    <ProgressBar
+        android:id="@+id/mainBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/colorPrimaryDark" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

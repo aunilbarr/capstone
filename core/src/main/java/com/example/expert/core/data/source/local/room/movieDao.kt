@@ -5,7 +5,10 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MovieDao {
-    @Insert(entity = com.example.expert.core.data.source.local.entity.movie::class, onConflict = OnConflictStrategy.IGNORE)
+    @Insert(
+        entity = com.example.expert.core.data.source.local.entity.movie::class,
+        onConflict = OnConflictStrategy.IGNORE
+    )
     fun insert(favoriteMovies: com.example.expert.core.data.source.local.entity.movie)
 
     @Query("SELECT * from movie_table")

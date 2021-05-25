@@ -1,4 +1,4 @@
-package com.example.expert
+package com.example.expert.view
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
-import com.example.expert.DeleteFragment.Companion.EXTRA_DATA
+import com.example.expert.R
 import com.example.expert.core.domain.model.DetailModel
 import com.example.expert.ViewModel.DetailViewModel
 import com.example.expert.core.domain.model.MovieModel
@@ -21,7 +21,6 @@ class DetailActivity : AppCompatActivity(), DeleteFragment.OnDialogListener {
     companion object {
         const val EXTRA_DATA = "extra_data"
         const val EXTRA_STATE = "extra_state"
-
     }
 
     private val viewModel: DetailViewModel by viewModel<DetailViewModel>()
@@ -54,15 +53,14 @@ class DetailActivity : AppCompatActivity(), DeleteFragment.OnDialogListener {
         fav_button.setOnClickListener {
             try {
                 createFavorite(movie)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 Toast.makeText(this, getString(R.string.error), Toast.LENGTH_LONG).show()
             }
         }
-
-
     }
-    private fun createFavorite(movie: MovieModel){
-        if (!isFavorite){
+
+    private fun createFavorite(movie: MovieModel) {
+        if (!isFavorite) {
             viewModel.insertFav(movie)
             setFavorite(true)
         } else {
@@ -74,12 +72,11 @@ class DetailActivity : AppCompatActivity(), DeleteFragment.OnDialogListener {
         }
     }
 
-    private fun setFavorite(boolean: Boolean){
-        if (boolean){
+    private fun setFavorite(boolean: Boolean) {
+        if (boolean) {
             isFavorite = true
             fav_button.setImageResource(R.drawable.fav)
-        }
-        else {
+        } else {
             isFavorite = false
             fav_button.setImageResource(R.drawable.favb)
         }
@@ -121,5 +118,4 @@ class DetailActivity : AppCompatActivity(), DeleteFragment.OnDialogListener {
         detailView.visibility = View.VISIBLE
         movieImage.visibility = View.VISIBLE
     }
-
 }

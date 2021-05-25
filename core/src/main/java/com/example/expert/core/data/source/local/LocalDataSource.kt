@@ -7,7 +7,10 @@ import kotlinx.coroutines.launch
 class LocalDataSource(private val Dao: com.example.expert.core.data.source.local.room.MovieDao) {
     fun getFavorite() = Dao.getFavorite()
 
-    fun check(id: Int, callback: com.example.expert.core.data.source.local.LocalDataSource.CheckFavoriteCallback) {
+    fun check(
+        id: Int,
+        callback: com.example.expert.core.data.source.local.LocalDataSource.CheckFavoriteCallback
+    ) {
         CoroutineScope(Dispatchers.IO).launch {
             callback.onChecked(Dao.check(id))
         }

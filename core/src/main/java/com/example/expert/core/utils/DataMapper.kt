@@ -26,7 +26,7 @@ object DataMapper {
 
     fun mapResponseToDomain(input: DetailResponse): DetailModel {
         val genres = ArrayList<String>()
-        for (i in input.genres){
+        for (i in input.genres) {
             genres.add(i.genre)
         }
         return DetailModel(

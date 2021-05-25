@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@color/teal_200"
             app:tabTextColor="@color/colorPrimary"
-            app:title="Your Favorite"/>
+            app:title="Your Favorite" />
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -27,15 +27,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/teal_200"
-        tools:listitem="@layout/item_list"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_list" />
 
     <ProgressBar
         android:id="@+id/favBar"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:indeterminateTint="@color/colorPrimaryDark"
         android:layout_height="wrap_content"
-        />
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/colorPrimaryDark" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

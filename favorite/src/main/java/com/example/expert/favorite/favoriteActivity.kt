@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.expert.DetailActivity
+import com.example.expert.view.DetailActivity
 import com.example.expert.core.domain.model.MovieModel
 import com.example.expert.core.ui.RecyclerViewAdapter
 import com.example.expert.favoriteModule
@@ -21,7 +21,7 @@ class favoriteActivity : AppCompatActivity() {
 
 
     private val viewModel: favoriteViewModel by viewModel()
-    private val favoriteAdapter : RecyclerViewAdapter by inject<RecyclerViewAdapter>()
+    private val favoriteAdapter: RecyclerViewAdapter by inject<RecyclerViewAdapter>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class favoriteActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.arrow_fav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        with(recyclerviewfav){
+        with(recyclerviewfav) {
             layoutManager = LinearLayoutManager(this@favoriteActivity)
             adapter = favoriteAdapter
         }

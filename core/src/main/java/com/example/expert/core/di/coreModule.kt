@@ -17,12 +17,12 @@ val useCaseModule = module {
 
 val databaseModule = module {
     factory { get<com.example.expert.core.data.source.local.room.movieDatabase>().movieDao() }
-single {
-    Room.databaseBuilder(
-        androidContext(),
-        com.example.expert.core.data.source.local.room.movieDatabase::class.java, "movie.db"
-    ).fallbackToDestructiveMigration().build()
-}
+    single {
+        Room.databaseBuilder(
+            androidContext(),
+            com.example.expert.core.data.source.local.room.movieDatabase::class.java, "movie.db"
+        ).fallbackToDestructiveMigration().build()
+    }
 }
 
 val networkModule = module {
