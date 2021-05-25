@@ -1,4 +1,4 @@
-package com.example.expert.view
+package com.example.expert.presentation.view
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.expert.R
 import com.example.expert.core.domain.model.DetailModel
-import com.example.expert.ViewModel.DetailViewModel
+import com.example.expert.presentation.ViewModel.DetailViewModel
 import com.example.expert.core.domain.model.MovieModel
 import com.example.expert.core.utils.GlidePhoto
 import kotlinx.android.synthetic.main.activity_detail.*

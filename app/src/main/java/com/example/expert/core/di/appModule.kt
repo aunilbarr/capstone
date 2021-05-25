@@ -1,7 +1,7 @@
 package com.example.expert.core.di
 
-import com.example.expert.ViewModel.DetailViewModel
-import com.example.expert.ViewModel.MainViewModel
+import com.example.expert.presentation.ViewModel.DetailViewModel
+import com.example.expert.presentation.ViewModel.MainViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

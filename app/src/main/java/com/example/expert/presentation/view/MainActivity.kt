@@ -1,4 +1,4 @@
-package com.example.expert.view
+package com.example.expert.presentation.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.expert.R
 import com.example.expert.core.ui.RecyclerViewAdapter
 import com.example.expert.core.domain.model.MovieModel
-import com.example.expert.ViewModel.MainViewModel
+import com.example.expert.presentation.ViewModel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel

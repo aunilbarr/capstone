@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.expert.view.DetailActivity
+import com.example.expert.presentation.view.DetailActivity
 import com.example.expert.core.domain.model.MovieModel
 import com.example.expert.core.ui.RecyclerViewAdapter
 import com.example.expert.favoriteModule

@@ -1,4 +1,4 @@
-package com.example.expert.ViewModel
+package com.example.expert.presentation.ViewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
