@@ -1,41 +1,37 @@
-# Proguard rules for SQLCipher
--keep,includedescriptorclasses class net.sqlcipher.** { *; }
--keep,includedescriptorclasses interface net.sqlcipher.** { *; }
-# Proguard rules for Gson
--keepattributes Signature
--keepattributes *Annotation*
--dontwarn sun.misc.**
--keep class com.google.gson.examples.android.model.** { <fields>;}
--keep class * extends com.google.gson.TypeAdapter
--keep class * implements com.google.gson.TypeAdapterFactory
--keep class * implements com.google.gson.JsonSerializer
--keep class * implements com.google.gson.JsonDeserializer
--keepclassmembers,allowobfuscation class * {
-@com.google.gson.annotations.SerializedName <fields>;
-}
-# Proguard rules for Retrofit
--keepattributes Signature, InnerClasses, EnclosingMethod
--keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
--keepclassmembers,allowshrinking,allowobfuscation interface * {
-@retrofit2.http.* <methods>;
-}
--dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
--dontwarn javax.annotation.**
--dontwarn kotlin.Unit
--dontwarn retrofit2.KotlinExtensions
--dontwarn retrofit2.KotlinExtensions$*
--if interface * { @retrofit2.http.* <methods>; }
--keep,allowobfuscation interface <1>
--dontwarn kotlinx.**
-# Proguard rules for Glide
--keep public class * implements com.bumptech.glide.module.AppGlideModule
--keep class * extends com.bumptech.glide.module.AppGlideModule{
-<init>(...);
-}
--keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
-**[] $VALUES;
-public *;
-}
--keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {
-*** rewind();
-}
+version: 2.1
+ 
+orbs:
+  android: circleci/android@0.2.1
+ 
+jobs:
+  build:
+    executor: android/android
+    steps:
+      - checkout
+      - restore_cache:
+          key: android-orb-v1-
+      - run:
+          name: Chmod permissions
+          command: sudo chmod +x ./gradlew
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          key: 'android-orb-v1-{{ epoch }}'
+          paths:
+            - ~/.android/build-cache
+            - ~/.android/cache
+      - run:
+          name: Run Build
+          command: ./gradlew build
+      - store_artifacts: 
+          path: app/build/reports
+          destination: reports
+      - run:
+          name: Run Tests
+          command: ./gradlew lint test
+      - store_test_results:
+          path: app/build/test-results
+      - store_artifacts:  
+          path: app/build/outputs/apk/debug/
+          destination: artifact-file
