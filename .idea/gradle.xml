@@ -7,7 +7,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="/Volumes/ExternalSSD/gradle-6.0.1" />
+        <option name="gradleJvm" value="openjdk-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
